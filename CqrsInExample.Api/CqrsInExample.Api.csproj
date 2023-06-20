@@ -7,11 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\CqrsInExample.Application\CqrsInExample.Application.csproj" />
+    <ProjectReference Include="..\CqrsInExample.Data\CqrsInExample.Data.csproj" />
+    <ProjectReference Include="..\CqrsInExample.Domain\CqrsInExample.Domain.csproj" />
   </ItemGroup>
 
 </Project>
