@@ -1,4 +1,4 @@
-﻿namespace CqrsInExample.Domain.Request
+﻿namespace CqrsInExample.Domain.Games.Request
 {
     public class GameGenreRelationRequest
     {

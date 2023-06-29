@@ -1,4 +1,6 @@
 ﻿using CqrsInExample.Application.Utils;
+using CqrsInExample.Domain.Games;
+using CqrsInExample.Domain.Games.Request;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CqrsInExample.Api.Controllers
@@ -21,5 +23,14 @@ namespace CqrsInExample.Api.Controllers
         {
             return Ok();
         }
+
+        [HttpPost]
+        public async Task<ActionResult> CreateAsync(CreateGameRequest request)
+        {
+            var command = new CreateGameCommand(request.Name, request.Description);
+            _messages.Dispatch(command);
+            return Ok();
+        }
     }
 }
+

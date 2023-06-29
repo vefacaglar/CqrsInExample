@@ -8,6 +8,11 @@
 
   <ItemGroup>
     <PackageReference Include="CSharpFunctionalExtensions" Version="2.39.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CqrsInExample.Data\CqrsInExample.Data.csproj" />
   </ItemGroup>
 
 </Project>
