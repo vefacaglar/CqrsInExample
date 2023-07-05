@@ -9,6 +9,7 @@ namespace CqrsInExample.Infrastructure
         public static IServiceCollection AddInfrastructure(this IServiceCollection services)
         {
             services.AddTransient<IGamesRepository, GamesRepository>();
+            return services;
         }
     }
 }
