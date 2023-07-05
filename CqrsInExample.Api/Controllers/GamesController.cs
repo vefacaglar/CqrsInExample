@@ -9,13 +9,13 @@ namespace CqrsInExample.Api.Controllers
     [Route("api/v1/[controller]")]
     public class GamesController : ControllerBase
     {
-        private readonly IMediator _mediator;
+        private readonly ISender _sender;
 
         public GamesController(
-            IMediator mediator
+            ISender sender
             )
         {
-            _mediator = mediator;
+            _sender = sender;
         }
 
         [HttpGet]
@@ -29,7 +29,7 @@ namespace CqrsInExample.Api.Controllers
         {
             var command = new CreateGameCommand(request.Name, request.Description);
 
-            var result = await _mediator.Send(command);
+            var result = await _sender.Send(command);
 
             return Ok(result);
         }

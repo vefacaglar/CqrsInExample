@@ -1,14 +1,12 @@
-﻿namespace CqrsInExample.Persistence.GamesContext;
+﻿using CqrsInExample.Infrastructure.GamesContext.Abstractions;
 
-public partial class Game
+namespace CqrsInExample.Infrastructure.GamesContext;
+
+public partial class Platform : IEntity
 {
     public int Id { get; set; }
 
     public string Name { get; set; } = null!;
-
-    public string? Description { get; set; }
-
-    public string? Cover { get; set; }
 
     public bool IsDeleted { get; set; }
 

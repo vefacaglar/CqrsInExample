@@ -14,7 +14,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		command-table-creation.sql = command-table-creation.sql
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CqrsInExample.Persistence", "CqrsInExample.Persistence\CqrsInExample.Persistence.csproj", "{AEC5B37F-A54D-4A41-8101-97EF86B8EB74}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CqrsInExample.Infrastructure", "CqrsInExample.Infrastructure\CqrsInExample.Infrastructure.csproj", "{AEC5B37F-A54D-4A41-8101-97EF86B8EB74}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

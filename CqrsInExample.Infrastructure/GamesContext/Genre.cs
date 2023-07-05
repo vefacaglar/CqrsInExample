@@ -1,6 +1,8 @@
-﻿namespace CqrsInExample.Persistence.GamesContext;
+﻿using CqrsInExample.Infrastructure.GamesContext.Abstractions;
 
-public partial class Genre
+namespace CqrsInExample.Infrastructure.GamesContext;
+
+public partial class Genre : IEntity
 {
     public int Id { get; set; }
 

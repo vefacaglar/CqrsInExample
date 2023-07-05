@@ -1,8 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using CqrsInExample.Infrastructure.GamesContext.Abstractions;
+using Microsoft.EntityFrameworkCore;
 
-namespace CqrsInExample.Persistence.GamesContext;
+namespace CqrsInExample.Infrastructure.GamesContext;
 
-public partial class GamesDbContext : DbContext
+public partial class GamesDbContext : DbContext, IDbContext
 {
     public GamesDbContext()
     {
