@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace CqrsInExample.Data.GamesContext;
+namespace CqrsInExample.Persistence.GamesContext;
 
 public partial class GamesDbContext : DbContext
 {

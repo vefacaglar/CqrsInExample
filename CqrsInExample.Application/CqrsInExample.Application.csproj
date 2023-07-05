@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -7,13 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="CSharpFunctionalExtensions" Version="2.39.2" />
     <PackageReference Include="MediatR" Version="12.0.1" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CqrsInExample.Data\CqrsInExample.Data.csproj" />
+    <ProjectReference Include="..\CqrsInExample.Persistence\CqrsInExample.Persistence.csproj" />
   </ItemGroup>
 
 </Project>

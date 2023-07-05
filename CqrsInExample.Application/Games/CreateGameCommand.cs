@@ -1,5 +1,4 @@
-﻿using CqrsInExample.Data.GamesContext;
-using CSharpFunctionalExtensions;
+﻿using CqrsInExample.Persistence.GamesContext;
 using MediatR;
 
 namespace CqrsInExample.Domain.Games
@@ -25,7 +24,6 @@ namespace CqrsInExample.Domain.Games
             }
             public async Task<bool> Handle(CreateGameCommand request, CancellationToken cancellationToken)
             {
-                var test = "";
 
                 return true;
             }

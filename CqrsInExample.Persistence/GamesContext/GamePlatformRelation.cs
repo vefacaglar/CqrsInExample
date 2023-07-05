@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace CqrsInExample.Data.GamesContext;
+namespace CqrsInExample.Persistence.GamesContext;
 
 public partial class GamePlatformRelation
 {

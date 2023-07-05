@@ -1,14 +1,10 @@
-﻿namespace CqrsInExample.Data.GamesContext;
+﻿namespace CqrsInExample.Persistence.GamesContext;
 
-public partial class Game
+public partial class Platform
 {
     public int Id { get; set; }
 
     public string Name { get; set; } = null!;
-
-    public string? Description { get; set; }
-
-    public string? Cover { get; set; }
 
     public bool IsDeleted { get; set; }
 

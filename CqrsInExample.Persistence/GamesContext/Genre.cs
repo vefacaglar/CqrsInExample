@@ -1,6 +1,6 @@
-﻿namespace CqrsInExample.Data.GamesContext;
+﻿namespace CqrsInExample.Persistence.GamesContext;
 
-public partial class Platform
+public partial class Genre
 {
     public int Id { get; set; }
 
