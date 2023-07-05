@@ -1,9 +1,10 @@
-﻿using CqrsInExample.Application.Abstractions;
+﻿using CqrsInExample.Data.GamesContext;
 using CSharpFunctionalExtensions;
+using MediatR;
 
 namespace CqrsInExample.Domain.Games
 {
-    public sealed class CreateGameCommand : ICommand
+    public sealed class CreateGameCommand : IRequest<bool>
     {
         public string Name { get; set; }
         public string Description { get; set; }
@@ -14,18 +15,19 @@ namespace CqrsInExample.Domain.Games
             Description = description;
         }
 
-        [DatabaseRetry]
-        internal sealed class CreateGameCommandHandler : ICommandHandler<CreateGameCommand>
+        internal sealed class CreateGameCommandHandler : IRequestHandler<CreateGameCommand, bool>
         {
 
             public CreateGameCommandHandler(
+                GamesDbContext _dbContext
                 )
             {
             }
-
-            public Result Handle(CreateGameCommand command)
+            public async Task<bool> Handle(CreateGameCommand request, CancellationToken cancellationToken)
             {
-                return Result.Success();
+                var test = "";
+
+                return true;
             }
         }
     }
