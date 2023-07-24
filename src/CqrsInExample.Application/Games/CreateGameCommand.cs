@@ -1,4 +1,5 @@
-﻿using CqrsInExample.Infrastructure.GamesContext.Abstractions;
+﻿using CqrsInExample.Infrastructure.GamesContext;
+using CqrsInExample.Infrastructure.GamesContext.Abstractions;
 using MediatR;
 
 namespace CqrsInExample.Domain.Games
@@ -16,16 +17,17 @@ namespace CqrsInExample.Domain.Games
 
         internal sealed class CreateGameCommandHandler : IRequestHandler<CreateGameCommand, bool>
         {
-            private readonly IDbContext _dbContext;
+            private readonly GamesDbContext _dbContext;
 
             public CreateGameCommandHandler(
-                IDbContext dbContext
+                GamesDbContext dbContext
                 )
             {
                 _dbContext = dbContext;
             }
             public async Task<bool> Handle(CreateGameCommand request, CancellationToken cancellationToken)
             {
+                
                 return true;
             }
         }
