@@ -13,6 +13,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<GamesDbContext>(options => options.UseSqlServer(configuration["ConnectionStrings:GamesDb"]));
+builder.Services.AddTransient<IMsSqlDbConnectionFactory, MsSqlConnectionFactory>();
 
 builder.Services.AddInfrastructure();
 builder.Services.AddMediatR(config => config.RegisterServicesFromAssembly(typeof(CreateGameCommand).Assembly));

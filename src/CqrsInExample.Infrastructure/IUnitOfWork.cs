@@ -13,7 +13,6 @@ namespace CqrsInExample.Infrastructure
     public class UnitOfWork : IUnitOfWork
     {
         private readonly GamesDbContext _dbContext;
-        private readonly Dictionary<Type, object> _repositories = new Dictionary<Type, object>();
 
         public UnitOfWork(
             GamesDbContext context

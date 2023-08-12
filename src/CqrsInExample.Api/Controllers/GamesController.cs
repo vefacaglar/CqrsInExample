@@ -1,4 +1,5 @@
-﻿using CqrsInExample.Domain.Games;
+﻿using CqrsInExample.Application.Games;
+using CqrsInExample.Domain.Games;
 using CqrsInExample.Domain.Games.Request;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -19,9 +20,11 @@ namespace CqrsInExample.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Test()
+        public async Task<ActionResult<List<GameItem>>> GetAsync()
         {
-            return Ok();
+            var query = new GetGamesQuery();
+            var result = await _sender.Send(query);
+            return Ok(result);
         }
 
         [HttpPost]
