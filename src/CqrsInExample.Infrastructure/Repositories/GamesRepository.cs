@@ -1,19 +1,13 @@
-﻿using CqrsInExample.Infrastructure.GamesContext.Abstractions;
-using CqrsInExample.Infrastructure.Repositories.Abstractions;
+﻿using CqrsInExample.Infrastructure.Repositories.Abstractions;
 
 namespace CqrsInExample.Infrastructure.Repositories
 {
     public class GamesRepository : IGamesRepository
     {
-        private readonly IDbContext _dbContext;
-
-        public GamesRepository(
-            IDbContext dbContext
-            )
+        public GamesRepository()
         {
-            _dbContext = dbContext;
         }
 
-        
+
     }
 }

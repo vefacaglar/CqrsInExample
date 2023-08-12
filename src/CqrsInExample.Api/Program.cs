@@ -1,7 +1,7 @@
 using CqrsInExample.Domain.Games;
 using CqrsInExample.Infrastructure.GamesContext;
-using CqrsInExample.Infrastructure.GamesContext.Abstractions;
 using Microsoft.EntityFrameworkCore;
+using CqrsInExample.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +14,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<GamesDbContext>(options => options.UseSqlServer(configuration["ConnectionStrings:GamesDb"]));
 
+builder.Services.AddInfrastructure();
 builder.Services.AddMediatR(config => config.RegisterServicesFromAssembly(typeof(CreateGameCommand).Assembly));
 
 var app = builder.Build();

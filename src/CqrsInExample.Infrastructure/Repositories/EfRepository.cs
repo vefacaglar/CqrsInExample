@@ -1,3 +1,4 @@
+using CqrsInExample.Infrastructure.GamesContext;
 using CqrsInExample.Infrastructure.Repositories.Abstractions;
 using Microsoft.EntityFrameworkCore;
 
@@ -5,11 +6,11 @@ namespace CqrsInExample.Infrastructure.Repositories
 {
     public class EfRepository<T> : IRepository<T> where T : class
     {
-        private readonly DbContext _context;
+        private readonly GamesDbContext _context;
         private readonly DbSet<T> _dbSet;
 
         public EfRepository(
-            DbContext context
+            GamesDbContext context
         )
         {
             _context = context;

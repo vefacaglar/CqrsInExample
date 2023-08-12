@@ -1,5 +1,5 @@
-﻿using CqrsInExample.Infrastructure.GamesContext;
-using CqrsInExample.Infrastructure.GamesContext.Abstractions;
+﻿using CqrsInExample.Infrastructure;
+using CqrsInExample.Infrastructure.GamesContext;
 using MediatR;
 
 namespace CqrsInExample.Domain.Games
@@ -17,17 +17,30 @@ namespace CqrsInExample.Domain.Games
 
         internal sealed class CreateGameCommandHandler : IRequestHandler<CreateGameCommand, bool>
         {
-            private readonly GamesDbContext _dbContext;
+            private readonly IUnitOfWork _uow;
 
             public CreateGameCommandHandler(
-                GamesDbContext dbContext
+                IUnitOfWork _unitOfWork
                 )
             {
-                _dbContext = dbContext;
+                _uow = _unitOfWork;
             }
+
             public async Task<bool> Handle(CreateGameCommand request, CancellationToken cancellationToken)
             {
-                
+                var newGame = new Game()
+                {
+                    Name = request.Name,
+                    Description = request.Description,
+                    CreationTime = DateTime.Now,
+                };
+
+                var repository = _uow.GetRepository<Game>();
+
+                repository.Add(newGame);
+
+                await _uow.SaveChangesAsync();
+
                 return true;
             }
         }

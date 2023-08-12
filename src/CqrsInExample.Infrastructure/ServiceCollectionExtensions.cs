@@ -9,6 +9,9 @@ namespace CqrsInExample.Infrastructure
         public static IServiceCollection AddInfrastructure(this IServiceCollection services)
         {
             services.AddTransient<IGamesRepository, GamesRepository>();
+
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddTransient(typeof(IRepository<>), typeof(EfRepository<>));
             return services;
         }
     }
