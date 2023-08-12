@@ -9,11 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CqrsInExample.Application",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CqrsInExample.Domain", "src\CqrsInExample.Domain\CqrsInExample.Domain.csproj", "{47C48FFC-10EF-4DD7-80FA-569EE269D966}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A1D9D5B6-6C3D-40D5-A295-BCFB4987643B}"
-	ProjectSection(SolutionItems) = preProject
-		command-table-creation.sql = command-table-creation.sql
-	EndProjectSection
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CqrsInExample.Infrastructure", "src\CqrsInExample.Infrastructure\CqrsInExample.Infrastructure.csproj", "{AEC5B37F-A54D-4A41-8101-97EF86B8EB74}"
 EndProject
 Global
